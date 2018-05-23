@@ -11,7 +11,7 @@ import {createMemoryHistory} from 'history'
 const history = createMemoryHistory()
 const mockAxios = new MockAdapter(axios)
 const middlewares = [thunks.withExtraArgument({axios, history})]
-const mockStore = configureMockStore(middlewares)
+const createMockStore = configureMockStore(middlewares)
 
 describe('thunk creators', () => {
   let store
@@ -19,7 +19,7 @@ describe('thunk creators', () => {
 
   beforeEach(() => {
     mockAxios.reset()
-    store = mockStore(initialState)
+    store = createMockStore(initialState)
   })
 
   describe('me', () => {

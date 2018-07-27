@@ -1,5 +1,5 @@
-const Sequelize = require('sequelize')
-const db = require('./database')
+const Sequelize = require('sequelize');
+const db = require('./database');
 
 const Team = db.define('team', {
     name: {
@@ -13,7 +13,7 @@ const Team = db.define('team', {
     seed: {
         type: Sequelize.INTEGER,
         unique: true,
-        allowNull: false
+        allowNull: true
     }
 })
 
